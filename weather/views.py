@@ -20,7 +20,7 @@ def weather_view(request):
 
     Endpoint:
         - Local Setup: http://127.0.0.1:8000/weather
-        - Deployed Endpoint: [Provide the deployed endpoint URL here]
+        - Deployed Endpoint: https://weather-analysis-system-s78b.onrender.com/weather
     """
     form = CityForm()
     weather_data = None
