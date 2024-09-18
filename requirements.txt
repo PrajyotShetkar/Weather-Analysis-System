@@ -1,5 +1,5 @@
 ﻿asgiref
-bckports.zoneinfo
+backports.zoneinfo
 backports.zoneinfo
 certifi
 charset-normalizer
