@@ -14,3 +14,4 @@ sqlparse
 typing-extensions
 tzdata
 urllib3
+python-dotenv
