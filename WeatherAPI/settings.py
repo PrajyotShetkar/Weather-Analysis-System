@@ -9,7 +9,7 @@ SECRET_KEY = os.environ["SECRET_KEY"]
 
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["weather-analysis-system-s78b.onrender.com"]
 
 
 INSTALLED_APPS = [
@@ -37,7 +37,13 @@ MIDDLEWARE = [
 ]
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOWED_ORIGINS = [
+    "https://weather-analysis-system-s78b.onrender.com",
+]
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://weather-analysis-system-s78b.onrender.com",
+]
 
 ROOT_URLCONF = 'WeatherAPI.urls'
 
