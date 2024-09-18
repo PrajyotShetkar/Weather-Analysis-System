@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .alert {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Weather Information</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Get Weather</button>
+    </form>
+
+    {% if error_message %}
+        <p class="error">{{ error_message }}</p>
+    {% endif %}
+
+    {% if weather_data %}
+        <h2>Weather for {{ weather_data.city }}</h2>
+        <p>Temperature: {{ weather_data.temperature }}°C</p>
+        <p>Humidity: {{ weather_data.humidity }}%</p>
+        <p>Wind Speed: {{ weather_data.wind_speed }} m/s</p>
+        <p>Condition: {{ weather_data.condition }}</p>
+
+        <h2>Trends in Last 24 Hours:</h2>
+        <p>Average Temperature: {{ weather_trends.avg_temperature }}°C</p>
+        <p>Average Humidity: {{ weather_trends.avg_humidity }}%</p>
+        <p>Wind Speed: {{ weather_trends.wind_speed }} m/s</p>
+        <p>Latest Condition: {{ weather_trends.latest_condition }}</p>
+
+        {% if extreme_alert %}
+            <h2 class="alert">{{ extreme_alert }}</h2>
+        {% endif %}
+    {% endif %}
+
+</body>
+</html>
