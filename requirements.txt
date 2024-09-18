@@ -1,8 +1,5 @@
-pip>=24.0
 asgiref
 wheel
-backports.zoneinfo
-backports.zoneinfo
 certifi
 charset-normalizer
 Django
